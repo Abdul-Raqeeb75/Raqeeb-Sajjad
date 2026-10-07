@@ -46,12 +46,6 @@ export default function Hero() {
             <a href="#projects" className="btn btn-primary">View My Work</a>
             <a href="#contact" className="btn btn-outline">Hire Me</a>
           </div>
-
-          // <div className="hero-socials">
-          //   <a href="#" aria-label="GitHub">GH</a>
-          //   <a href="#" aria-label="LinkedIn">LI</a>
-          //   <a href="#" aria-label="Twitter">TW</a>
-          // </div>
         </div>
 
         <div className="hero-image">
