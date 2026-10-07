@@ -28,7 +28,7 @@ export default function Footer() {
         { label: 'Get in Touch', href: '/#contact' },
         { label: 'Terms & Conditions', href: '#' },
         { label: 'Privacy Policy', href: '#' },
-        { label: 'Refund Policy', href: '#' },
+        // { label: 'Refund Policy', href: '#' },
       ],
     },
   ];

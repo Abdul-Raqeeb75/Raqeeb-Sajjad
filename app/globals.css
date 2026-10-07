@@ -346,7 +346,8 @@ body {
     padding: 0.4rem 1rem;
     border-radius: 50px;
     margin-bottom: 1.25rem;
-    animation: fadeInUp 0.6s ease forwards;
+    /* animation: fadeInUp 0.6s ease forwards; */
+    animation: fadeInUp 0.6s ease 1.5s both;
 }
 
 .hero-title {
@@ -355,7 +356,8 @@ body {
     line-height: 1.1;
     color: var(--text-primary);
     margin-bottom: 1rem;
-    animation: fadeInUp 0.6s ease 0.1s backwards;
+    /* animation: fadeInUp 0.6s ease 0.1s backwards; */
+    animation: fadeInUp 0.6s ease 1.6s both;
     letter-spacing: -0.02em;
 }
 
@@ -373,15 +375,18 @@ body {
     font-weight: 600;
     color: var(--text-secondary);
     margin-bottom: 1.5rem;
-    animation: fadeInUp 0.6s ease 0.2s backwards;
-}
+    /* animation: fadeInUp 0.6s ease 0.2s backwards; */
+    animation: fadeInUp 0.6s ease 1.7s both;
+
+  }
 
 .hero-description {
     font-size: 1.05rem;
     color: var(--text-secondary);
     line-height: 1.7;
     margin-bottom: 2rem;
-    animation: fadeInUp 0.6s ease 0.3s backwards;
+    /* animation: fadeInUp 0.6s ease 0.3s backwards; */
+    animation: fadeInUp 0.6s ease 1.8s both;
 }
 
 /* Buttons */
@@ -390,7 +395,8 @@ body {
     gap: 1rem;
     flex-wrap: wrap;
     margin-bottom: 2rem;
-    animation: fadeInUp 0.6s ease 0.4s backwards;
+    /* animation: fadeInUp 0.6s ease 0.4s backwards; */
+    animation: fadeInUp 0.6s ease 1.9s both;
 }
 
 .btn {
@@ -434,7 +440,8 @@ body {
 .hero-socials {
     display: flex;
     gap: 0.75rem;
-    animation: fadeInUp 0.6s ease 0.5s backwards;
+    /* animation: fadeInUp 0.6s ease 0.5s backwards; */
+        animation: fadeInUp 0.6s ease 2.0s both;
 }
 
 .hero-socials a {
@@ -470,7 +477,8 @@ body {
     justify-content: center;
     align-items: center;
     position: relative;
-    animation: fadeInRight 0.8s ease 0.3s backwards;
+    /* animation: fadeInRight 0.8s ease 0.3s backwards; */
+    animation: fadeInRight 0.8s ease 1.8s both;
 }
 
 .image-wrapper {
@@ -2296,5 +2304,110 @@ a.contact-info-value:hover {
 
   .contact-info-card {
     padding: 1.25rem;
+  }
+}
+
+/* ==========================================
+   LOADER — DUAL SPINNER
+   ========================================== */
+.loader {
+  height: 15px;
+  aspect-ratio: 4;
+  --_g: no-repeat radial-gradient(
+    farthest-side,
+    var(--primary-color) 90%,
+    var(--primary-dark)
+  );
+  background: var(--_g) left, var(--_g) right;
+  background-size: 25% 100%;
+  display: grid;
+  margin: 0 auto;
+}
+
+.loader:before,
+.loader:after {
+  content: "";
+  height: inherit;
+  aspect-ratio: 1;
+  grid-area: 1/1;
+  margin: auto;
+  border-radius: 50%;
+  transform-origin: -100% 50%;
+  background: var(--primary-dark);
+  animation: loaderSpin 1s infinite linear;
+}
+
+.loader:after {
+  transform-origin: 200% 50%;
+  --s: -1;
+  animation-delay: -0.5s;
+}
+
+@keyframes loaderSpin {
+  58%,
+  100% {
+    transform: rotate(calc(var(--s, 1) * 1turn));
+  }
+}
+
+/* ==========================================
+   PAGE LOADER — Full Screen Overlay
+   ========================================== */
+.page-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--background-color);
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+.page-loader.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.page-loader.fade-out {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Subtle glow behind loader */
+.page-loader::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(
+    circle,
+    rgba(99, 102, 241, 0.08),
+    transparent 70%
+  );
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* ==========================================
+   ROUTE LOADER — Route Transitions
+   ========================================== */
+.route-loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  padding: 4rem 2rem;
+}
+
+/* ==========================================
+   RESPONSIVE — LOADER
+   ========================================== */
+@media (max-width: 480px) {
+  .loader {
+    height: 16px;
   }
 }
