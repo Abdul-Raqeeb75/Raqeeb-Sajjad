@@ -47,11 +47,11 @@ export default function Hero() {
             <a href="#contact" className="btn btn-outline">Hire Me</a>
           </div>
 
-          <div className="hero-socials">
-            <a href="#" aria-label="GitHub">GH</a>
-            <a href="#" aria-label="LinkedIn">LI</a>
-            <a href="#" aria-label="Twitter">TW</a>
-          </div>
+          // <div className="hero-socials">
+          //   <a href="#" aria-label="GitHub">GH</a>
+          //   <a href="#" aria-label="LinkedIn">LI</a>
+          //   <a href="#" aria-label="Twitter">TW</a>
+          // </div>
         </div>
 
         <div className="hero-image">
@@ -62,7 +62,7 @@ export default function Hero() {
             />
           </div>
           <div className="experience-badge">
-            <span className="badge-number">3+</span>
+            <span className="badge-number">2+</span>
             <span className="badge-text">Years Experience</span>
           </div>
         </div>
