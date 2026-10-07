@@ -1422,13 +1422,28 @@ body {
 /* ==========================================
    FOOTER
    ========================================== */
-.footer {
+/* .footer {
   background: #0a0a0f;
   color: #ffffff;
   padding: 5rem 2rem 0;
   position: relative;
   overflow: hidden;
+} */
+
+.footer {
+  background: linear-gradient(
+    135deg,
+    #0a0a0f 0%,
+    #1a0d3d 40%,
+    #4c1d95 75%,
+    #7c3aed 100%
+  );
+  color: #ffffff;
+  padding: 5rem 2rem 0;
+  position: relative;
+  overflow: hidden;
 }
+
 
 .footer-container {
   max-width: 1200px;
