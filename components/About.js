@@ -58,17 +58,26 @@ export default function About() {
             </h3>
 
             <p className="about-paragraph reveal">
-              I specialize in building modern, responsive websites that
-              deliver exceptional user experiences. With a keen eye for
-              design and a passion for clean code, I transform ideas into
-              functional, beautiful digital products.
-            </p>
+  I'm a passionate technology professional focused on building modern
+  digital solutions that combine creativity, data, and technology.
+  I enjoy turning ideas and real-world problems into practical,
+  user-friendly, and scalable digital products.
+</p>
 
-            <p className="about-paragraph reveal">
-              When I'm not coding, you'll find me exploring new design
-              trends, contributing to open-source projects, or sharing
-              knowledge with the developer community.
-            </p>
+<p className="about-paragraph reveal">
+  My work spans web development, data science, AI-powered solutions,
+  and automation. I believe great digital products are not just about
+  how they look, but also about how effectively they solve problems
+  and create value for users and businesses.
+</p>
+
+<p className="about-paragraph reveal">
+  I'm continuously learning and exploring new technologies, tools,
+  and ideas to improve my skills and build better solutions. Whether
+  it's developing a website, working with data, or creating an
+  intelligent digital solution, I approach every project with
+  curiosity, attention to detail, and a problem-solving mindset.
+</p>
 
             <div className="about-stats">
               <div className="stat-item reveal">
@@ -76,11 +85,11 @@ export default function About() {
                 <span className="stat-label">Years Experience</span>
               </div>
               <div className="stat-item reveal">
-                <span className="stat-number">50+</span>
+                <span className="stat-number">10+</span>
                 <span className="stat-label">Projects Done</span>
               </div>
               <div className="stat-item reveal">
-                <span className="stat-number">30+</span>
+                <span className="stat-number">5+</span>
                 <span className="stat-label">Happy Clients</span>
               </div>
             </div>
