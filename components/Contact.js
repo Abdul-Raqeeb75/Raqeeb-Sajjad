@@ -68,11 +68,11 @@ export default function Contact() {
     // },
   ];
 
-  const socials = [
-    { label: 'GitHub', href: '#', icon: 'GH' },
-    { label: 'LinkedIn', href: '#', icon: 'LI' },
-    { label: 'Twitter', href: '#', icon: 'TW' },
-  ];
+  // const socials = [
+  //   { label: 'GitHub', href: '#', icon: 'GH' },
+  //   { label: 'LinkedIn', href: '#', icon: 'LI' },
+  //   { label: 'Twitter', href: '#', icon: 'TW' },
+  // ];
 
   return (
     <section
