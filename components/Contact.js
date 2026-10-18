@@ -60,19 +60,7 @@ export default function Contact() {
       value: '+92 3086883922',
       href: 'tel:+923086883922',
     },
-    // {
-    //   icon: '📍',
-    //   label: 'Location',
-    //   value: 'Pakistan',
-    //   href: null,
-    // },
   ];
-
-  // const socials = [
-  //   { label: 'GitHub', href: '#', icon: 'GH' },
-  //   { label: 'LinkedIn', href: '#', icon: 'LI' },
-  //   { label: 'Twitter', href: '#', icon: 'TW' },
-  // ];
 
   return (
     <section
@@ -98,7 +86,6 @@ export default function Contact() {
 
           {/* LEFT: Contact Info */}
           <div className="contact-info">
-
             <div className="contact-info-cards">
               {contactInfo.map((item) => (
                 <div key={item.label} className="contact-info-card">
@@ -116,29 +103,11 @@ export default function Contact() {
                 </div>
               ))}
             </div>
-
-            {/* Socials */}
-            <div className="contact-socials-block">
-              <h4 className="contact-socials-heading">Follow Me</h4>
-              <div className="contact-socials">
-                {socials.map((s) => (
-                  <a
-                    key={s.label}
-                    href={s.href}
-                    className="contact-social"
-                    aria-label={s.label}
-                  >
-                    {s.icon}
-                  </a>
-                ))}
-              </div>
-            </div>
-
+            {/* Socials block completely removed from here ✅ */}
           </div>
 
           {/* RIGHT: Form */}
           <form className="contact-form" onSubmit={handleSubmit}>
-
             <div className="form-group">
               <label htmlFor="name">Your Name</label>
               <input
@@ -185,11 +154,9 @@ export default function Contact() {
             >
               {submitted ? '✓ Message Sent!' : 'Send Message'}
             </button>
-
           </form>
 
         </div>
-
       </div>
     </section>
   );
