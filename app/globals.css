@@ -47,254 +47,282 @@ body {
     color: var(--text-primary);
     line-height: 1.6;
 }
-
 /* ==========================================
-   HEADER - STICKY WITH GLASSMORPHISM
+   HEADER — Floating Pill Navbar
    ========================================== */
 .header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border-color);
-    transition: box-shadow var(--transition-base);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 1rem 1.5rem;
+  background: transparent;
+  pointer-events: none;
 }
 
-.header:hover {
-    box-shadow: var(--shadow-sm);
+/* Pill-shaped container */
+.navbar-pill {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.5rem 0.75rem 0.5rem 0.5rem;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(229, 231, 235, 0.8);
+  border-radius: 100px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+  pointer-events: auto;      /* ← YE ADD KARO */
 }
 
-/* ==========================================
-   NAVBAR - FLEXBOX LAYOUT
-   ========================================== */
+.navbar-pill:hover {
+  box-shadow: 0 8px 32px rgba(99, 102, 241, 0.1);
+  border-color: rgba(99, 102, 241, 0.2);
+}
+
+/* Inner navbar flex */
 .navbar {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1rem var(--container-padding);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
 }
 
 /* ==========================================
-   LOGO
+   LOGO — Profile Picture
    ========================================== */
 .logo {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 1.25rem;
-    color: var(--text-primary);
-    transition: transform var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
 }
 
 .logo:hover {
-    transform: scale(1.02);
+  transform: scale(1.05);
 }
 
-.logo-mark {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
-    color: white;
-    border-radius: 10px;
-    font-weight: 800;
-    font-size: 1.1rem;
-    box-shadow: var(--shadow-primary);
-}
-
-.logo-text {
-    color: var(--text-primary);
+.logo-image {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ffffff;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.25);
+  display: block;
 }
 
 /* ==========================================
-   NAV LINKS
+   CTA BUTTON — Pill Shape
+   ========================================== */
+.nav-cta {
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+  color: white;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 100px;
+  box-shadow: 0 6px 18px rgba(99, 102, 241, 0.3);
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  border: none;
+}
+
+.nav-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(99, 102, 241, 0.45);
+}
+
+.nav-cta:active {
+  transform: translateY(0);
+}
+
+/* ==========================================
+   NAV LINKS — Inside Pill
    ========================================== */
 .nav-links {
-    display: flex;
-    align-items: center;
-    gap: 2.5rem;
-    list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+  flex: 1;
+  justify-content: center;
 }
 
 .nav-link {
-    position: relative;
-    text-decoration: none;
-    color: var(--text-secondary);
-    font-size: 0.95rem;
-    font-weight: 500;
-    padding: 0.5rem 0;
-    transition: color var(--transition-fast);
+  position: relative;
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  transition: color 0.2s ease;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
 }
 
 .nav-link:hover,
 .nav-link.active {
-    color: var(--primary-color);
+  color: var(--primary-color);
 }
 
 /* Animated underline */
 .nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
-    border-radius: 2px;
-    transition: width var(--transition-base);
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  border-radius: 2px;
+  transition: width 0.3s ease;
 }
 
 .nav-link:hover::after,
 .nav-link.active::after {
-    width: 100%;
-}
-
-/* ==========================================
-   CTA BUTTON
-   ========================================== */
-.nav-cta {
-    padding: 0.625rem 1.5rem;
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
-    color: white;
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 600;
-    border-radius: 10px;
-    box-shadow: var(--shadow-primary);
-    transition: all var(--transition-base);
-    white-space: nowrap;
-}
-
-.nav-cta:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 28px rgba(99, 102, 241, 0.4);
-}
-
-.nav-cta:active {
-    transform: translateY(0);
+  width: 100%;
 }
 
 /* ==========================================
    MOBILE MENU TOGGLE
    ========================================== */
 .menu-toggle {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0.5rem;
-    z-index: 1001;
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 1001;
 }
 
 .menu-toggle span {
-    width: 24px;
-    height: 2px;
-    background: var(--text-primary);
-    border-radius: 2px;
-    transition: all var(--transition-base);
+  width: 24px;
+  height: 2px;
+  background: var(--text-primary);
+  border-radius: 2px;
+  transition: all 0.3s ease;
 }
 
 /* ==========================================
-   NAV OVERLAY (Mobile menu background)
+   NAV OVERLAY
    ========================================== */
 .nav-overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 999;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 /* ==========================================
    RESPONSIVE - MOBILE NAVBAR
    ========================================== */
 @media (max-width: 768px) {
-    
-    /* Nav links → slide-in menu */
-    .nav-links {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 280px;
-        height: 100vh;
-        background: var(--surface-color);
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
-        padding: 6rem 2rem 2rem;
-        gap: 1.5rem;
-        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
-        transition: right 0.4s ease;
-        z-index: 1000;
-        overflow-y: auto;
-        display: flex;
-    }
-    
-    /* Open state */
-    .nav-links.open {
-        right: 0;
-    }
-    
-    .nav-link {
-        font-size: 1.15rem;
-        font-weight: 600;
-        width: 100%;
-        padding: 0.75rem 0;
-    }
-    
-    .nav-link::after {
-        display: none;
-    }
-    
-    /* Hamburger show */
-    .menu-toggle {
-        display: flex;
-    }
-    
-    /* Hamburger → X animation */
-    .menu-toggle.active span:nth-child(1) {
-        transform: translateY(7px) rotate(45deg);
-    }
-    
-    .menu-toggle.active span:nth-child(2) {
-        opacity: 0;
-    }
-    
-    .menu-toggle.active span:nth-child(3) {
-        transform: translateY(-7px) rotate(-45deg);
-    }
-    
-    /* Overlay active */
-    .nav-overlay.active {
-        display: block;
-        opacity: 1;
-    }
-    
-    .navbar {
-        padding: 1rem 1.25rem;
-    }
+  .header {
+    padding: 0.75rem 1rem;
+  }
+
+  .navbar-pill {
+    padding: 0.5rem 0.75rem;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background: var(--surface-color);
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 6rem 2rem 2rem;
+    gap: 1.5rem;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+    transition: right 0.4s ease;
+    z-index: 1000;
+    overflow-y: auto;
+    border-radius: 0;
+    flex: none;
+    justify-content: flex-start;
+  }
+
+  .nav-links.open {
+    right: 0;
+  }
+
+  .nav-link {
+    font-size: 1.15rem;
+    font-weight: 600;
+    width: 100%;
+    padding: 0.75rem 0;
+    text-align: left;
+  }
+
+  .nav-link::after {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .menu-toggle.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  .nav-overlay.active {
+    display: block;
+    opacity: 1;
+  }
+
+  .desktop-cta {
+    display: none;
+  }
+
+  .mobile-cta {
+    display: block;
+    width: 100%;
+    margin-top: 0.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+  }
+
+  .mobile-cta .nav-cta {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 0.875rem 1.5rem;
+    font-size: 0.95rem;
+  }
 }
 
 /* ==========================================
    HERO SECTION
    ========================================== */
-.hero {
+/* .hero {
     min-height: 90vh;
     display: flex;
     align-items: center;
@@ -302,7 +330,20 @@ body {
     background: linear-gradient(180deg, #fafafa 0%, #f5f3ff 100%);
     position: relative;
     overflow: hidden;
+} */
+
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 8rem 2rem 4rem;      /* ← Top padding zyada (header ke liye) */
+  background: linear-gradient(180deg, #fafafa 0%, #f5f3ff 100%);
+  position: relative;
+  overflow: hidden;
 }
+
+
 
 /* Decorative background circle */
 .hero::before {
@@ -580,7 +621,8 @@ body {
 /* Tablet */
 @media (max-width: 968px) {
     .hero {
-        padding: 3rem 1.5rem;
+        /* padding: 3rem 1.5rem; */
+        padding: 7rem 1.5rem 3rem;
         min-height: auto;
     }
     
@@ -596,7 +638,8 @@ body {
 /* Mobile */
 @media (max-width: 768px) {
     .hero {
-        padding: 3rem 1.25rem;
+        /* padding: 3rem 1.25rem; */
+        padding: 6rem 1.25rem 3rem;
     }
     
     .hero-container {
@@ -1247,7 +1290,6 @@ body {
 
 
 
-
 /* ==========================================
    PROJECTS SECTION
    ========================================== */
@@ -1274,18 +1316,18 @@ body {
    ========================================== */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 320px));
+  gap: 1.5rem;
+  justify-content: center;
 }
 
+/* ==========================================
+   PROJECT CARD — Full Image + Blur Hover
+   ========================================== */
 .project-card {
-  background: var(--background-color);
-  border: 1px solid var(--border-color);
-  border-radius: 16px;
-  overflow: hidden;
-  transition: transform 0.4s ease, box-shadow 0.4s ease, opacity 0.6s ease;
   opacity: 0;
   transform: translateY(40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
 .projects.animate .project-card {
@@ -1294,20 +1336,52 @@ body {
   transition-delay: var(--delay);
 }
 
-.project-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(99, 102, 241, 0.15);
-}
-
-/* Project Image / Placeholder */
-.project-image {
+.project-card-link {
   position: relative;
-  height: 220px;
+  display: block;
+  aspect-ratio: 4 / 5;
+  border-radius: 20px;
   overflow: hidden;
-  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid var(--border-color);
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1),
+              box-shadow 0.5s ease;
+  isolation: isolate;
 }
 
-.project-image::before {
+.project-card-link:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 48px rgba(99, 102, 241, 0.18);
+}
+
+/* ==========================================
+   BACKGROUND IMAGE / GRADIENT
+   ========================================== */
+.project-card-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.project-card-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: filter 0.6s ease, transform 0.6s ease;
+}
+
+.project-card-gradient {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transition: filter 0.6s ease, transform 0.6s ease;
+}
+
+/* Subtle dot pattern over gradient */
+.project-card-gradient::before {
   content: '';
   position: absolute;
   inset: 0;
@@ -1318,87 +1392,122 @@ body {
   opacity: 0.7;
 }
 
-.project-overlay {
+/* Blur overlay (initially hidden) */
+.project-card-blur-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(17, 24, 39, 0.85);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
+  background: rgba(10, 10, 15, 0.55);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.5s ease, backdrop-filter 0.5s ease,
+              -webkit-backdrop-filter 0.5s ease;
   z-index: 1;
 }
 
-.project-image:hover .project-overlay {
+.project-card-link:hover .project-card-bg img,
+.project-card-link:hover .project-card-gradient {
+  filter: blur(8px);
+  transform: scale(1.08);
+}
+
+.project-card-link:hover .project-card-blur-overlay {
   opacity: 1;
-}
-
-.project-link {
-  padding: 0.65rem 1.25rem;
-  background: white;
-  color: var(--text-primary);
-  text-decoration: none;
-  border-radius: 8px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  transition: transform 0.2s ease;
-}
-
-.project-link:hover {
-  transform: translateY(-2px);
-}
-
-.project-content {
-  padding: 1.5rem;
-}
-
-.project-category {
-  display: inline-block;
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: var(--primary-color);
-  background: rgba(99, 102, 241, 0.1);
-  padding: 0.3rem 0.75rem;
-  border-radius: 50px;
-  margin-bottom: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.project-title {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 0.5rem;
-}
-
-.project-description {
-  font-size: 0.9rem;
-  color: var(--text-secondary);
-  line-height: 1.6;
-  margin-bottom: 1rem;
-}
-
-.project-tech {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.project-tech span {
-  font-size: 0.75rem;
-  font-weight: 500;
-  color: var(--text-secondary);
-  background: var(--background-color);
-  border: 1px solid var(--border-color);
-  padding: 0.25rem 0.75rem;
-  border-radius: 50px;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
 }
 
 /* ==========================================
-   RESPONSIVE - PROJECTS
+   ARROW ICON (top-right)
+   ========================================== */
+.project-card-arrow {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95);
+  color: #111827;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+              background 0.35s ease, color 0.35s ease;
+}
+
+.project-card-arrow svg {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+.project-card-link:hover .project-card-arrow {
+  background: var(--primary-color);
+  color: #ffffff;
+  transform: rotate(45deg) scale(1.08);
+}
+
+/* ==========================================
+   CONTENT (title + description, on hover)
+   ========================================== */
+.project-card-content {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 0.6rem;
+  padding: 2rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease 0.1s, transform 0.5s ease 0.1s;
+  pointer-events: none;
+}
+
+.project-card-link:hover .project-card-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.project-card-category {
+  align-self: flex-start;
+  display: inline-block;
+  padding: 0.35rem 0.85rem;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  border-radius: 50px;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.project-card-title {
+  font-size: 1.65rem;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  margin: 0;
+}
+
+.project-card-description {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+  max-width: 95%;
+}
+
+/* ==========================================
+   RESPONSIVE — PROJECTS
    ========================================== */
 @media (max-width: 768px) {
   .projects {
@@ -1410,8 +1519,46 @@ body {
     gap: 1.5rem;
   }
 
-  .project-image {
-    height: 180px;
+  .project-card-link {
+    aspect-ratio: 4 / 5;
+  }
+
+  .project-card-content {
+    padding: 1.5rem;
+  }
+
+  .project-card-title {
+    font-size: 1.4rem;
+  }
+
+  .project-card-description {
+    font-size: 0.88rem;
+  }
+
+  .project-card-arrow {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  /* Mobile — hover nahi hota, to content hamesha thoda visible rakho */
+  .project-card-content {
+    opacity: 1;
+    transform: translateY(0);
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.75) 0%,
+      rgba(0, 0, 0, 0.3) 50%,
+      transparent 100%
+    );
+  }
+
+  .project-card-blur-overlay {
+    opacity: 0;
+  }
+
+  .project-card-bg img,
+  .project-card-bg .project-card-gradient {
+    filter: none;
   }
 }
 
@@ -2426,3 +2573,9 @@ a.contact-info-value:hover {
     height: 16px;
   }
 }
+
+
+
+
+
+

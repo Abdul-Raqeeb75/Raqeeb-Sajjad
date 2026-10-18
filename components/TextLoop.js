@@ -69,14 +69,10 @@ export default function TextLoop() {
         preserveAspectRatio="xMidYMid slice"
       >
         <path
-          id="wavePath"
-          d="M -200 70 
-             Q 100 30, 400 70 
-             T 1000 70 
-             T 1600 70 
-             T 2200 70"
-          fill="none"
-          stroke="none"
+        id="wavePath"
+        d="M -200 70 L 2200 70"
+        fill="none"
+        stroke="none"
         />
         <text className="text-loop-text">
           <textPath href="#wavePath" id="textPath" startOffset="0"></textPath>

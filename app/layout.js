@@ -5,7 +5,7 @@ import PageLoader from "@/components/PageLoader";
 
 export const metadata = {
   title: "Raqeeb Sajjad — Data Scientist | Frontend Developer | AI Enthusiast",
-  description: "Frontend developer building clean, responsive websites.",
+  description: "Developer and Data Scientist with a passion for building clean, responsive websites and leveraging AI for innovative solutions.",
 };
 
 export default function RootLayout({ children }) {
